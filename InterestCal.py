@@ -11,30 +11,28 @@ def account_balance():# def function/ what is function name, how many params.
 
     new_balance = starting_balance + dividend_payment # what is the new balance of the starting balance and the dividend payment 
     
-    print(new_balance) # print new balance 
+    #print(new_balance) # print new balance 
 
-    balance_list = []
-
-    balance_list.append(new_balance)
 
     #create list that adds new_balance to it. 
 
     # define nested function 
-    def interest_cal():
+    def interest_cal(new_balance):
         count = 0
-        how_many = int(input("How many times? "))
+        how_many = int(input("How many units of time? "))
+        balance_list = [new_balance]
 
         while(count <= how_many):
             comp_interst = new_balance + dividend_payment # new balance + dividend payment is = to ? 
-            print(comp_interst)
-            for i in balance_list:
-                i = i + comp_interst
-                print(i)
-                count = count + 1
+            count = count + 1
+
+            for i in range(len(balance_list)):  
+                i = balance_list.append(i + comp_interst)
+            print(balance_list[-1])
 # how many times to add the new balance to dividend payment 
 
 # print results of new balance + dividend payment * how many times 
-    interest_cal()
+    interest_cal(new_balance)
 
 
 
